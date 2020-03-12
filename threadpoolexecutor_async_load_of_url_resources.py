@@ -14,8 +14,8 @@ class AsyncThreadPoolGetter():
 
         futures_to_todo = []
         for url in urls:
-            futures_to_todo.append(executor.submit(fn=request_from_url, domain=url))
+            futures_to_todo.append(executor.submit(fn=request_from_url, url=url))
 
         wait(futures_to_todo)
-        print("Finished async job.")
+        print("Finished async job. Access self.loaded_data now")
 
