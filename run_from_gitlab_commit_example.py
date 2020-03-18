@@ -17,7 +17,7 @@ import traceback
 SLEEP_SECONDS = 60 # Between the checks for a new commit in gitlab repo
 
 
-REPO_REMOTE = 'git@gitlab.com:cgi1/market_db.git'
+REPO_REMOTE = 'git@gitlab.com:cgi1/my_gitlab_repo.git'
 MASTER_BRANCH = 'origin/master'
 REPO_NAME = 'my_gitlab_repo'
 BASE_DIR = '/home/cgi/BUILDER/repo/'
@@ -28,10 +28,6 @@ global_git = Git()
 global_git.update_environment(
     **{k: os.environ[k] for k in os.environ if k.startswith('SSH')}
 )
-
-# repo is a Repo instance pointing to the git-python repository.
-# For all you know, the first argument to Repo is a path to the repository
-# you want to work with
 
 def trigger_new_commit(args, print_response_of_started_program=True):
     print('%s trigger_new_commit %s' % (datetime.datetime.now(), args))
