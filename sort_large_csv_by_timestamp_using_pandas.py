@@ -1,3 +1,7 @@
+"""
+@author: Christoph Giese cgi1; https://github.com/cgi1/
+"""
+
 import pandas as pd
 import os, datetime, traceback
 
