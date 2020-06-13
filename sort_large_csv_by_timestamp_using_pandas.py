@@ -47,3 +47,13 @@ for fname in sorted(os.listdir(L1_DIR)):
     print("to_csv %s rows from [%s] to [%s]. Took (%s)" % (len(df.index), fname, fname_out, (e - s)))
 
 
+    
+"""
+Start processing 2019-09-17.l1
+Read 76661682 rows from 2019-09-17.l1. Took (0:01:51.272076)
+0.00 % (abs: 2) are not parsable datetimes. Removed it.
+Now having 76661680 rows to set_index.
+set_index 76661680 rows from 2019-09-17.l1. Took (0:00:00.948296)
+sort_index 76661680 rows from [2019-09-17.l1] to [2019-09-17.l1sorted]. Took (0:01:21.022877)
+to_csv 76661680 rows from [2019-09-17.l1] to [2019-09-17.l1sorted]. Took (0:15:05.592970)
+"""
