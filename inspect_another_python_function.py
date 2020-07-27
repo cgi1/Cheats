@@ -1,5 +1,7 @@
 """
 @author: Christoph Giese @cgi1
+This is ugly stuff but fast-forward sometimes.. You need to make sure to have the code equally formatted
+or bring some effort into regex parsing to be more robust to linespaces, different characters like ' and " and so on.. So be careful.
 """
 
 def get_filter():
