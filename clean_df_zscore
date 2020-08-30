@@ -1,0 +1,35 @@
+import numpy as np
+import pandas as pd
+
+# @author: Christoph Giese @cgi1 https://github.com/cgi1/Cheats/
+def clean_df_zscore(df, threshold=3, cols_to_check=['a', 'b']):
+    """
+    Clean data based on zscore for cols_to_check.
+    @args $df pandas DataFrame to cleanup, $threshold for zscore to be under in $cols_to_check
+    @return Cleaned dataframe
+    """
+    orig_count = len(df.index)
+
+    selector = None
+    for col in cols_to_check:
+        df['zscore_%s' % col] = np.abs(stats.zscore(df[[col]]))
+        selector_col = df['zscore_%s' % col] < threshold
+        if selector is None:
+            selector = selector_col
+        else:
+            selector = selector & selector_col
+
+    df = df.loc[selector]
+    zscore_cols = []
+    for col in cols_to_check:
+        zscore_cols.append('zscore_%s' % col)
+    df.drop(columns=zscore_cols, inplace=True)
+    final_count = len(df.index)
+    prct_removed = round(100 / orig_count * (orig_count - final_count), 4)
+    print("Removed %.2f %% (%s -> %s) in clean_df_intraday_zscore"
+          % (prct_removed, orig_count, final_count))
+    return df
+    
+if __name__ == '__main__':
+    df = pd.DataFrame()
+    clean_valid_df_intraday_zscore(df=df, threshold=3, cols_to_check=['a', 'b'])
