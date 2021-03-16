@@ -1,3 +1,18 @@
+# Prep
+
+Make sure ufw is running
+
+```
+sudo ufw status
+```
+
+Enable it if not (MAKE SURE THAT YOU HAVE A KVM or ANOTHER DIRECT ACCESS IF SSH BREAKS!)
+
+```
+sudo ufw enable
+```
+
+
 In order to drop ping requests (not responding anymore):
 
 
@@ -11,4 +26,6 @@ Check for the ping line and change it to DROP (default is ACCEPT):
 ```
 Restart firewall
 
+```
 sudo ufw reload
+```
