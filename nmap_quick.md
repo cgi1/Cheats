@@ -1,6 +1,7 @@
 [source](https://svn.nmap.org/nmap/zenmap/share/zenmap/config/scan_profile.usp)
 
 [Intense scan]
+
 command = nmap -T4 -A -v
 description = An intense, comprehensive scan. The -A option enables OS detection (-O), version detection (-sV), script scanning (-sC), and traceroute (--traceroute). Without root privileges only version detection and script scanning are run. This is considered an intrusive scan.
 
