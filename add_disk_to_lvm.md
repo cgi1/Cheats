@@ -54,3 +54,16 @@ df -h
 ```
 
 (find your newly created file system under your mounting point)
+
+8. Add on system boot
+
+[Find out the UUID](https://askubuntu.com/a/303499/864617):
+
+```
+sudo blkid
+```
+
+Enter it like  this (replace the UUID and the mount location)
+```
+UUID=1187991b-c0f8-4086-bcdc-fe50d949bf67    /mnt/large   auto    rw,user,auto    0    0
+```
