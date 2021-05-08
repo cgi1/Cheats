@@ -30,7 +30,7 @@ n
 
 (add all the blocks by pressing ENTER)
 
-5. Now create the partition
+5. Now create the file system
 
 Once again, we find the partition where we want to create a filesystem on using `fdisk -l`. Here it is `/dev/sdb1`
 
