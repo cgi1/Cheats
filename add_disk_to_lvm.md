@@ -28,9 +28,13 @@ d
 n
 ```
 
+5. Save made changes using `w`
+
 (add all the blocks by pressing ENTER)
 
-5. Now create the file system
+----
+
+1. Now create the file system
 
 Once again, we find the partition where we want to create a filesystem on using `fdisk -l`. Here it is `/dev/sdb1`
 
@@ -38,11 +42,12 @@ Once again, we find the partition where we want to create a filesystem on using 
 mkfs -t ext4 /dev/sdb1
 ```
 
-6. Create & Mount the newly added disk
+2. Create & Mount the newly added disk
 
 
 ```
 mkdir -p /mnt/large/
+chown g:g /mnt/large/
 mount -t auto /dev/sdb1 /mnt/large/
 ```
 
@@ -63,7 +68,7 @@ df -h
 sudo blkid
 ```
 
-Enter it like  this (replace the UUID and the mount location)
+Enter it like this (replace the UUID and the mount location) to `/etc/fstab`
 ```
 UUID=1187991b-c0f8-4086-bcdc-fe50d949bf67    /mnt/large   auto    rw,user,auto    0    0
 ```
