@@ -1,0 +1,17 @@
+Dump it to disk
+
+vzdump 403 --dumpdir /mnt/oldwsdc1/backup_vzdump/
+
+Move via SCP
+
+cd /mnt/oldwsdc1/backup_vzdump/
+scp vzdump-qemu-203-2021_09_10-14_10_30.* root@192.168.178.223:/mnt/pve/old4tbhitachi1/backup_vzdump/
+
+
+Restore it
+
+qmrestore --storage local-lvm vzdump-qemu-205-2021_09_10-13_40_03.vma 205
+
+################################################
+
+Tags: Proxmox, vzdump, qemu, backup, restore, hypervisor migration
