@@ -28,3 +28,6 @@ vzdump 501 --node pve2 --mode snapshot --remove 0 --compress zstd --dumpdir /mnt
 ```
 qmrestore vzdump-qemu-501-2021_11_08-12_59_34.vma.zst 501 --storage local-lvm
 ```
+
+
+[Credits](https://cyberpersons.com/2016/09/13/backup-transfer-proxmox-vm-another-proxmox-node/#Create_backup_from_command_line)
