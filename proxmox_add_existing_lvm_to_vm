@@ -1,0 +1,20 @@
+Find LV Path using
+
+```
+lvdisplay
+```
+
+Then update dedicated VM
+
+```
+lvchange --addtag pve-vm-601 /dev/ssd2tbclassic/vm-601-disk-0 
+```
+
+Reload Proxmox Daemon
+
+
+```
+systemctl restart pvedaemon
+```
+
+Check in Datacenter->pve->Disk->LVM(-Thin)
